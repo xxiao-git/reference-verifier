@@ -238,6 +238,7 @@ def main():
             num, status, sim, ref_disp, real_disp
         ), flush=True)
 
+        results.append(ref)
         time.sleep(0.3)
         if (idx + 1) % 10 == 0:
             print("  ... {}/{} done".format(idx + 1, total), flush=True)

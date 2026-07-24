@@ -27,12 +27,9 @@ DEFAULT_EXCLUDE = ["biorxiv", "medrxiv", "meeting abstract", "preprint", "posted
 
 # Preprint server DOI patterns (case-insensitive regex)
 PREPRINT_DOI_PATTERNS = [
-    re.compile(r'^10\.11010
-            verified.append(ref)
-            found_dois.append(ref["doi"])
-            print("[{}/{}] Ref#{}: OK | DOI from source: {}".format(
-                idx + 1, total, num, ref["doi"]), flush=True)
-            continue
+    re.compile(r'^10\.1101/', re.IGNORECASE),   # bioRxiv / medRxiv
+    re.compile(r'^10\.21203/', re.IGNORECASE),   # Research Square
+]
 
 
 def build_headers(mailto):
